@@ -6,13 +6,14 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class Asia extends Region implements fun{
-    // 인터페이스 fun 과 region 클래스를 상속받음
+    // 2, 5 : 다형성과 클래스 상속
     // name에는 국가 명칭 저장
     // 각 나라별 한류인식, 소비, 파급효과 설명 파일을 txt파일에 저장시켜서 파일을 불러와서 출력하게끔 함수를 구현했다.
     public Asia(){
         name = "아시아";
     }
 
+    // 4 : 예외처리 사용
     // A()는 한류 인식
     @Override
     public void A() {

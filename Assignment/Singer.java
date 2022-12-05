@@ -2,7 +2,7 @@ package assignment;
 
 public class Singer extends People{
 
-    // People 클래스를 상속받아 이름과 연도를 사용하고 소속사 agency 변수는 따로 선언
+    // 2 : People 클래스를 상속받아 이름과 연도를 사용하고 소속사 agency 변수는 따로 선언
     public String agency;
     public Singer(int year, String name, String agency){
         this.year = year; // 데뷔 연도

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Kpop {
 
-    // ArrayList를 생성하고 Singer클래스를 기준으로 저장할 변수를 받음
+    // 7 : ArrayList를 생성하고 Singer클래스를 기준으로 저장할 변수를 받음
     private ArrayList<Singer> arrayList;
 
     public Kpop(){

@@ -1,7 +1,7 @@
 package assignment;
 
 public class Actor extends People{
-    // people 클래스를 상속 받아 배우의 이름과 출생연도를 저장
+    // 2 : people 클래스를 상속 받아 배우의 이름과 출생연도를 저장
 
     public Actor(String name, int year){
         this.name = name;

@@ -35,11 +35,11 @@ public class HallyuExample {
         drama.addActor(actor4);
         drama.addActor(actor5);
 
-        // 리스트에 드라마와 영화 리스트 저장, 배열 참조 타입
+        // 6 : 리스트에 드라마와 영화 리스트 저장, 배열 참조 타입
         String[] dramaList = {"오징어게임", "사랑의 불시착", "빈센조", "펜트하우스", "태양의 후예"};
         String[] movieList = {"기생충", "부산행", "서복","미드나이트", "싱크홀"};
 
-        // hashmap을 사용하여 화장품 재료와 재료의 효과 저장, 컬렉션 프레임 워크 사용
+        // 7 : hashmap을 사용하여 화장품 재료와 재료의 효과 저장, 컬렉션 프레임 워크 사용
         Map<String, String> map = new HashMap<String, String>();
         map.put("유자", "기미, 색소침착");
         map.put("센델라", "피부진정");
@@ -94,7 +94,8 @@ public class HallyuExample {
                                 continue;
 
                             case 4:
-                                try ( //요기서 객체를 생성하면 try종료 후 자동으로 close처리됨
+                                // 8 : 파일 입/출력 사용
+                                try ( //여기서 객체를 생성하면 try종료 후 자동으로 close처리됨
                                       //true : 기존 파일에 이어서 작성 (default는 false임)
                                       FileWriter fw = new FileWriter("C:\\Users\\JJong__ss\\Desktop\\study_java\\src\\main\\java\\assignment\\food.txt", true);
                                       BufferedWriter bw = new BufferedWriter(fw);
@@ -112,7 +113,7 @@ public class HallyuExample {
                                 // 파일 존재 여부 판단
                                 if (f.isFile()) {
                                 }
-
+                                // 4 : 예외 처리 사용
                                 try (
                                         FileReader rw = new FileReader("C:\\Users\\JJong__ss\\Desktop\\study_java\\src\\main\\java\\assignment\\food.txt");
                                         BufferedReader br = new BufferedReader(rw);
@@ -142,7 +143,7 @@ public class HallyuExample {
                                     System.out.println("1.쑥 | 2.프로바이오틱스 | 3.나가기");
                                     System.out.print(">>> ");
                                     switch (sc.nextInt()) {
-                                        // 열거 타입 사용
+                                        // 6 : 열거 타입 사용
                                         case 1:
                                             material = Beauty.쑥;
                                             System.out.println(material + " : 진정과 항염효과");
@@ -154,6 +155,8 @@ public class HallyuExample {
                                             System.out.println();
                                             continue;
                                         default:
+                                            System.out.println("이전으로 돌아갑니다.");
+                                            System.out.println();
                                     }
                                     break;
                                 }
@@ -165,129 +168,144 @@ public class HallyuExample {
                         break;
                     }
                     continue;
-
+                // 지역별 한류 인식
                 case 3:
-                    System.out.println("1.아프리카 | 2.미주 | 3.아시아 | 4.유럽 | 5.나가기");
-                    System.out.print(">>> ");
-                    switch (sc.nextInt()) {
-                        case 1:
-                            Africa africa = new Africa();
-                            while(true) {
-                                System.out.println(africa.name);
-                                System.out.println("1.한류 인식 | 2.한류 소비 | 3.한류 파급효과 | 4.나가기");
-                                System.out.print(">>> ");
-                                switch (sc.nextInt()) {
-                                    case 1:
-                                        System.out.println("<한류 인식>");
-                                        africa.A();
-                                        System.out.println();
-                                        continue;
-                                    case 2:
-                                        System.out.println("<한류 소비>");
-                                        africa.B();
-                                        System.out.println();
-                                        continue;
-                                    case 3:
-                                        System.out.println("<한류 파급효과>");
-                                        africa.C();
-                                        System.out.println();
-                                        continue;
-                                    default:
+                    while(true){
+                        System.out.println("1.아프리카 | 2.미주 | 3.아시아 | 4.유럽 | 5.나가기");
+                        System.out.print(">>> ");
+                        switch (sc.nextInt()) {
+                            case 1:
+                                // 5 : 다형성
+                                Region africa = new Africa();
+                                while(true) {
+                                    System.out.println(africa.name);
+                                    System.out.println("1.한류 인식 | 2.한류 소비 | 3.한류 파급효과 | 4.나가기");
+                                    System.out.print(">>> ");
+                                    switch (sc.nextInt()) {
+                                        case 1:
+                                            System.out.println("<한류 인식>");
+                                            africa.A();
+                                            System.out.println();
+                                            continue;
+                                        case 2:
+                                            System.out.println("<한류 소비>");
+                                            africa.B();
+                                            System.out.println();
+                                            continue;
+                                        case 3:
+                                            System.out.println("<한류 파급효과>");
+                                            africa.C();
+                                            System.out.println();
+                                            continue;
+                                        default:
+                                            System.out.println("이전으로 돌아갑니다.");
+                                            System.out.println();
+                                    }
+                                    break;
                                 }
-                                break;
-                            }
-                            continue;
-
-                        case 2:
-                            Americas americas = new Americas();
-                            while(true) {
-                                System.out.println(americas.name);
-                                System.out.println("1.한류 인식 | 2.한류 소비 | 3.한류 파급효과 | 4.나가기");
-                                System.out.print(">>> ");
-                                switch (sc.nextInt()) {
-                                    case 1:
-                                        System.out.println("<한류 인식>");
-                                        americas.A();
-                                        System.out.println();
-                                        continue;
-                                    case 2:
-                                        System.out.println("<한류 소비>");
-                                        americas.B();
-                                        System.out.println();
-                                        continue;
-                                    case 3:
-                                        System.out.println("<한류 파급효과>");
-                                        americas.C();
-                                        System.out.println();
-                                        continue;
-                                    default:
+                                continue;
+                            case 2:
+                                // 5 : 다형성
+                                Region americas = new Americas();
+                                while(true) {
+                                    System.out.println(americas.name);
+                                    System.out.println("1.한류 인식 | 2.한류 소비 | 3.한류 파급효과 | 4.나가기");
+                                    System.out.print(">>> ");
+                                    switch (sc.nextInt()) {
+                                        case 1:
+                                            System.out.println("<한류 인식>");
+                                            americas.A();
+                                            System.out.println();
+                                            continue;
+                                        case 2:
+                                            System.out.println("<한류 소비>");
+                                            americas.B();
+                                            System.out.println();
+                                            continue;
+                                        case 3:
+                                            System.out.println("<한류 파급효과>");
+                                            americas.C();
+                                            System.out.println();
+                                            continue;
+                                        default:
+                                            System.out.println("이전으로 돌아갑니다.");
+                                            System.out.println();
+                                    }
+                                    break;
                                 }
-                                break;
-                            }
-                            continue;
+                                continue;
 
-                        case 3:
-                            Asia asia = new Asia();
-                            while(true) {
-                                System.out.println(asia.name);
-                                System.out.println("1.한류 인식 | 2.한류 소비 | 3.한류 파급효과 | 4.나가기");
-                                System.out.print(">>> ");
-                                switch (sc.nextInt()) {
-                                    case 1:
-                                        System.out.println("<한류 인식>");
-                                        asia.A();
-                                        System.out.println();
-                                        continue;
-                                    case 2:
-                                        System.out.println("<한류 소비>");
-                                        asia.B();
-                                        System.out.println();
-                                        continue;
-                                    case 3:
-                                        System.out.println("<한류 파급효과>");
-                                        asia.C();
-                                        System.out.println();
-                                        continue;
-                                    default:
+                            case 3:
+                                // 5 : 다형성
+                                Region asia = new Asia();
+                                while(true) {
+                                    System.out.println(asia.name);
+                                    System.out.println("1.한류 인식 | 2.한류 소비 | 3.한류 파급효과 | 4.나가기");
+                                    System.out.print(">>> ");
+                                    switch (sc.nextInt()) {
+                                        case 1:
+                                            System.out.println("<한류 인식>");
+                                            asia.A();
+                                            System.out.println();
+                                            continue;
+                                        case 2:
+                                            System.out.println("<한류 소비>");
+                                            asia.B();
+                                            System.out.println();
+                                            continue;
+                                        case 3:
+                                            System.out.println("<한류 파급효과>");
+                                            asia.C();
+                                            System.out.println();
+                                            continue;
+                                        default:
+                                            System.out.println("이전으로 돌아갑니다.");
+                                            System.out.println();
+                                    }
+                                    break;
                                 }
-                                break;
-                            }
-                            continue;
+                                continue;
 
-                        case 4:
-                            Europe europe = new Europe();
-                            while(true) {
-                                System.out.println(europe.name);
-                                System.out.println("1.한류 인식 | 2.한류 소비 | 3.한류 파급효과 | 4.나가기");
-                                System.out.print(">>> ");
-                                switch (sc.nextInt()) {
-                                    case 1:
-                                        System.out.println("<한류 인식>");
-                                        europe.A();
-                                        System.out.println();
-                                        continue;
-                                    case 2:
-                                        System.out.println("<한류 소비>");
-                                        europe.B();
-                                        System.out.println();
-                                        continue;
-                                    case 3:
-                                        System.out.println("<한류 파급효과>");
-                                        europe.C();
-                                        System.out.println();
-                                        continue;
-                                    default:
+                            case 4:
+                                // 5 : 다형성
+                                Region europe = new Europe();
+                                while(true) {
+                                    System.out.println(europe.name);
+                                    System.out.println("1.한류 인식 | 2.한류 소비 | 3.한류 파급효과 | 4.나가기");
+                                    System.out.print(">>> ");
+                                    switch (sc.nextInt()) {
+                                        case 1:
+                                            System.out.println("<한류 인식>");
+                                            europe.A();
+                                            System.out.println();
+                                            continue;
+                                        case 2:
+                                            System.out.println("<한류 소비>");
+                                            europe.B();
+                                            System.out.println();
+                                            continue;
+                                        case 3:
+                                            System.out.println("<한류 파급효과>");
+                                            europe.C();
+                                            System.out.println();
+                                            continue;
+                                        default:
+                                            System.out.println("이전으로 돌아갑니다.");
+                                            System.out.println();
+                                    }
+                                    break;
                                 }
-                                break;
-                            }
-                            continue;
+                                continue;
 
-                        default:
-                            System.out.println("이전으로 돌아갑니다.");
-                            continue;
+                            default:
+                                System.out.println("이전으로 돌아갑니다.");
+                                System.out.println();
+                        }break;
                     }
+                    continue;
                 case 4:
                     System.out.println("프로그램 종료!");
+                    System.out.println("한류에 많은 관심을 가져주셔서 감사합니다.");
                     String path = "C:\\Users\\JJong__ss\\Desktop\\study_java\\src\\main\\java\\assignment\\food.txt";
 
                     // food.txt 내용 초기화

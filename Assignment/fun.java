@@ -1,6 +1,6 @@
 package assignment;
 
-public interface fun {
+public interface fun { // 3 : 인터페이스 사용
 
     // 지역별 국가 한류 함수를 상속할 인터페이스
 
