@@ -43,6 +43,7 @@ public class HallyuExample {
         Map<String, String> map = new HashMap<String, String>();
         map.put("유자", "기미, 색소침착");
         map.put("센델라", "피부진정");
+        // 쑥과 프로바이오틱스는 열거타입을 사용하여 출력
         // map.put("쑥", "진정과 항염효과");
         // map.put("프로바이오틱스", "건조, 염증완화");
 
